@@ -1,3 +1,17 @@
 FROM openjdk:17-jdk-slim
-COPY target/scala-2.13/akka-http-quickstart-scala-assembly-0.1.0-SNAPSHOT.jar /app.jar
-CMD ["java", "-jar", "/app.jar"]
+
+WORKDIR /usr/src/app
+
+COPY *.gradle ./
+COPY gradle gradle
+COPY gradlew .
+COPY settings.gradle.kts .
+COPY src src
+
+RUN chmod +x ./gradlew
+
+RUN ./gradlew build
+
+COPY build/libs .
+
+CMD ["java", "-jar", "tic_tac_toe-1.0-SNAPSHOT.jar"]
