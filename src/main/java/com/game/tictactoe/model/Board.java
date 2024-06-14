@@ -13,6 +13,10 @@ public class Board implements Displayable {
             {' ', '|', ' ', '|', ' '}
     };
 
+    public char[][] getBoard() {
+        return board;
+    }
+
     @Override
     public void displayGameBoard() {
         System.out.println();

@@ -20,7 +20,7 @@ docker run -it --rm tictactoe
 ### Package and file organization: 
 
 ```
-    com.game.tricki
+    com.game.tictactoe
     ├── exception
     │   └── InvalidMoveException.java
     ├── model
